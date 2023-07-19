@@ -33,17 +33,12 @@
         "containerId": "",
         "name": "localhost:3000/api/first",
         "url": "localhost:3000/api/first",
-        "method": "POST",
+        "method": "GET",
         "sortNum": 0,
         "created": "2023-07-19T09:26:24.076Z",
-        "modified": "2023-07-19T09:36:23.754Z",
+        "modified": "2023-07-19T12:02:05.009Z",
         "headers": [],
         "params": [],
-        "body": {
-            "type": "json",
-            "raw": "{\n  \"name\":\"farnaz\"\n}",
-            "form": []
-        },
         "tests": []
     },
     {
