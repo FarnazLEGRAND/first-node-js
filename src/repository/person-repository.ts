@@ -25,5 +25,15 @@ export const personRepository={
         const result= await collection.insertOne(person);
         person._id = result.insertedId; //On assigne l'id auto-généré à l'objet person
         return person;
+    },
+
+    remove(_id:string) {
+        return collection.deleteOne({_id:new ObjectId(_id)});
+    },
+    update(_id:string, person:Person) {
+        return collection.updateOne({_id:new ObjectId(_id)}, {$set:person});
     }
-};
+}
+
+
+

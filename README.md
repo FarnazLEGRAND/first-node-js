@@ -49,3 +49,19 @@ ______________________
 4. Dans personRepository, on rajoute un persist(person:Person) et on l'utilise dans un insertOne
 	
 5. On fait une route en post dans le personController et on donne le req.body à manger au persist.
+
+_______________________
+     ## Delete et update
+	
+1. Dans le personRepository, créer une méthode remove(_id:string) qui va faire une suppression sur la collection person en se basant sur l'id/ObjectId
+	
+2. Dans le personController, rajouter une route de type delete sur /:id, avec le middleware checkId pour s'assurer que l'id est bien un ObjectId valide
+	
+3. Dans cette route, appeler la méthode remove du repository et faire une réponse 204 sans contenu si ça a marché
+	
+4. Dans le personRepository, faire une méthode update qui va attendre un _id:string et un person:Person et utiliser la collection pour faire un updateOne({_id:new ObjectId(_id)}, {$set:person})
+	
+5. Côté contrôleur, rajouter une nouvelle route /:id avec un checkId et appeler le update dedans avec le req.params.id et le req.body et avec la validation
+
+# Pour le delete, modifier le entities.ts et passer le type de _id? à any.
+# Et pour faire le deleteOne il faudra lui donner un objet en argument avec {_id:new ObjectId(_id)}
