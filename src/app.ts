@@ -2,6 +2,7 @@ import 'dotenv/config'; //Import nécessaire pour que les fichier .env soient pr
 import express from 'express';
 import { exampleController } from './controller/example';
 import { firstController } from './controller/first';
+import { personController } from './controller/person-controllor';
 //On choisit le port sur lequel tournera l'application en indiquant 3000 par défaut mais modifiable par une variable d'environnement
 const port = process.env.PORT || 3000;
 
@@ -13,6 +14,7 @@ app.use(express.json());
 //Ici, on assigne notre contrôleur à la route /api/example, ce qui fait que toutes les routes définies dans le contrôleur seront préfixées par /api/example
 app.use('/api/example', exampleController);
 app.use('/api/first', firstController);
+app.use('/api/person', personController);
 
 //On dit à l'application d'écouter les requêtes http sur le port choisit
 app.listen(port, () => {

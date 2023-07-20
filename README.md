@@ -36,3 +36,16 @@ _____________________
 4. Dans le personRepository, rajouter un findAll() {} et dedans faire un return du find().toArray()
 	
 5. Créer un personController dans son propre fichier, le charger sur la route /api/person dans le app.ts et dans ce contrôleur déclarer une route async en get sur / qui va await le personRepository.findAll() et faire un res.json du resultat
+
+______________________
+     ## findById et persist
+
+1. Dans le personRepository, rajouter une méthode findById(_id:string) qui va faire un findOne avec la collection pour rechercher un élément par son _id
+	
+2. Dans le personController, créer une nouvelle route sur /:id et récupérer la valeur de l'id avec req.params.id et utiliser cette valeur dans le findById
+	
+3. Faire une petite vérification que la person renvoyé n'est pas null, si elle l'est, on fait un res.status(404).end('Not Found') sinon on fait le res.json classique
+	
+4. Dans personRepository, on rajoute un persist(person:Person) et on l'utilise dans un insertOne
+	
+5. On fait une route en post dans le personController et on donne le req.body à manger au persist.
