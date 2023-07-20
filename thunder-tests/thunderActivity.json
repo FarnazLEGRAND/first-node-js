@@ -18,13 +18,18 @@
         "colId": "history",
         "containerId": "",
         "name": "localhost:3000/api/example/bloup",
-        "url": "localhost:3000/api/example/bloup",
-        "method": "GET",
+        "url": "localhost:3000/api/person",
+        "method": "POST",
         "sortNum": 0,
         "created": "2023-07-19T08:07:52.228Z",
-        "modified": "2023-07-19T08:07:52.228Z",
+        "modified": "2023-07-20T14:29:35.660Z",
         "headers": [],
         "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n    \"name\": \"Jon\",\n    \"age\": 61,\n    \"address\": {\n      \"number\": \"57\",\n      \"street\": \"rue exemple,fa\",\n      \"country\": \"France\",\n      \"city\": \"Grenoble\"\n    }\n  }\n  ",
+            "form": []
+        },
         "tests": []
     },
     {
