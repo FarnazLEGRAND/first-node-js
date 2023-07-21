@@ -65,3 +65,15 @@ _______________________
 
 # Pour le delete, modifier le entities.ts et passer le type de _id? à any.
 # Et pour faire le deleteOne il faudra lui donner un objet en argument avec {_id:new ObjectId(_id)}
+
+
+_________________
+# attention:
+Fermer la connexion lorsque l'app se ferme
+const cleanup = () => {
+    connection.close();
+    process.exit();
+}
+ 
+process.on('SIGINT', cleanup);
+process.on('SIGTERM', cleanup);
