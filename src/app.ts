@@ -11,6 +11,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 //On indique à notre application de convertir les body des requêtes JSON en objet js
 app.use(express.json());
+// on cree cors pour dire application viens az hameja
 app.use (cors ());
 //Ici, on assigne notre contrôleur à la route /api/example, ce qui fait que toutes les routes définies dans le contrôleur seront préfixées par /api/example
 app.use('/api/example', exampleController);
