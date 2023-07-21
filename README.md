@@ -77,3 +77,16 @@ const cleanup = () => {
  
 process.on('SIGINT', cleanup);
 process.on('SIGTERM', cleanup);
+
+__________________
+## Authentification node + express + passport?
+
+1. Dans le projet node-express, rajouter une nouvelle interface User dans les entities qui aura un _id?:any, un email en string, un password en string et un role en string
+	
+2. Créer un user-repository.ts sur le même modèle que le person-repository, avec dedans juste un findByEmail et un persist
+	
+3. Installer la library bcrypt (qui permet de créer et comparé des hash auto salés) avec un npm i bcrypt puis un npm i @types/bcrypt -D
+	
+4. Créer un auth-controller.ts et dedans créer un router authController ainsi qu'un schéma de validation Joi qui va attendre un email de type string/email et un password de type string minimum 4 caractères
+	
+5. Dans ce contrôleur, créer une route POST sur /api/user dans laquelle on va : valider le req.body avec Joi, puis assigner un role 'ROLE_USER' au req.body, puis utiliser bcrypt pour hasher le req.body.password et le réassigner au req.body.password avant de faire persister le tout
